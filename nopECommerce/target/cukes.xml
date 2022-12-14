@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="81.024">
+<testcase classname="guest registration" name="guest user could register with valid data successfully" time="80.008">
+<system-out><![CDATA[When guest user clicks on Register Tab......................................passed
+Then guest user should be directed to registering page......................passed
+When guest user chooses any Gender option...................................passed
+And Fill First Name.........................................................passed
+And Fill Last Name..........................................................passed
+And Select Day..............................................................passed
+And Select Month............................................................passed
+And Select Year.............................................................passed
+And Enter any email.........................................................passed
+And Enter any company name..................................................passed
+And Enter any password......................................................passed
+And Enter same password in Confirm Password field...........................passed
+And Click on REGISTER button................................................passed
+Then the user should be registered successfully.............................passed
+And a success green message is displayed....................................passed
+]]></system-out>
+</testcase>
+</testsuite>
