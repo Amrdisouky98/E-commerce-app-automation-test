@@ -1,0 +1,4 @@
+file:src/main/resources/features/F08_Slider.feature:6:10
+file:src/main/resources/features/F09_Wishlist.feature:11
+file:src/main/resources/features/F07_FollowUs.feature:15
+file:src/main/resources/features/F03_ResetPassword.feature:7

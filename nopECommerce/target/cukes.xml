@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="5" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="14" time="380.275">
+<testcase classname="User could register to the system successfully" name="User could register successfully with valid data" time="65.711">
+<system-out><![CDATA[Given User navigate to register page........................................passed
+Then Guest user should be directed to registering page......................passed
+When User select gender.....................................................passed
+And Insert valid Firstname..................................................passed
+And Insert valid Lastname...................................................passed
+And Enter his birthday......................................................passed
+And Enter his birthmonth....................................................passed
+And Enter his birthyear.....................................................passed
+And Enter valid email.......................................................passed
+And Enter any company name..................................................passed
+And Enter valid password....................................................passed
+And Confirm recently entered password.......................................passed
+And Click register button...................................................passed
+Then the user should be registered successfully.............................passed
+And a success green message is displayed....................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Log in to the system successfully" name="User could log in with valid email and password" time="24.906">
+<system-out><![CDATA[Given User navigates to Login page..........................................passed
+When Insert enter valid email...............................................passed
+And Insert valid password...................................................passed
+And Click on login button...................................................passed
+Then The user should be logged in successfully..............................passed
+]]></system-out>
+</testcase>
+<testcase classname="User restore his lost password" name="User could reset his/her password successfully" time="24.415">
+<failure message="expected [By.className: content] but found [Email with instructions has been sent to you.]" type="java.lang.AssertionError"><![CDATA[Given User navigates to Login page..........................................passed
+Given User clicks on forget password button.................................passed
+Then User navigates to password recovery page...............................passed
+And User enters the email he wants to reset the passowrd at.................passed
+And User clicks on recover button...........................................passed
+Then A reset confirmation message appears...................................failed
+
+StackTrace:
+java.lang.AssertionError: expected [By.className: content] but found [Email with instructions has been sent to you.]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1413)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+	at org.testng.Assert.assertEquals(Assert.java:131)
+	at org.testng.Assert.assertEquals(Assert.java:643)
+	at org.example.stepsDefinition.S03_PasswordReset.confirmMsg(S03_PasswordReset.java:40)
+	at ✽.A reset confirmation message appears(file:///E:/Udacity/nopECommerce/src/main/resources/features/F03_ResetPassword.feature:12)
+]]></failure>
+</testcase>
+<testcase classname="Change currency" name="Logged User could switch between currencies US-Euro" time="22.21">
+<system-out><![CDATA[Given The user should be logged in successfully.............................passed
+When User click on currencies DDL then click on Euro sign...................passed
+Then Currency changes from US to Euro.......................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Product search" name="Logged User could search for any product" time="13.575">
+<system-out><![CDATA[Given The user should be logged in successfully.............................passed
+Given User click on search field............................................passed
+And Start typing favoured product name......................................passed
+And Click on search button..................................................passed
+Then User should be directed to search result page..........................passed
+]]></system-out>
+</testcase>
+<testcase classname="Hover over categories and sub-categories" name="Logged user could select different Categories" time="12.212">
+<system-out><![CDATA[Given The user should be logged in successfully.............................passed
+When User hover with mouse on Apparel category..............................passed
+And User click on shoes sub-category in DDL.................................passed
+Then User heads to Apparel category page....................................passed
+]]></system-out>
+</testcase>
+<testcase classname="User navigate to website's social pages" name="user visits facebook page" time="39.652">
+<system-out><![CDATA[Given The user should be logged in successfully.............................passed
+Given user clicks on facebook link..........................................passed
+Then user heads to "https://www.facebook.com/nopCommerce" page..............passed
+]]></system-out>
+</testcase>
+<testcase classname="User navigate to website's social pages" name="user visits twitter page" time="26.301">
+<system-out><![CDATA[Given The user should be logged in successfully.............................passed
+Given user clicks on twitter link...........................................passed
+Then user heads to "https://twitter.com/nopCommerce" page...................passed
+]]></system-out>
+</testcase>
+<testcase classname="User navigate to website's social pages" name="user visits rss page" time="11.905">
+<failure message="Index: 1, Size: 1" type="java.lang.IndexOutOfBoundsException"><![CDATA[Given The user should be logged in successfully.............................passed
+Given user clicks on rss link...............................................passed
+Then user heads to "https://demo.nopcommerce.com/new-online-store-is-open" page.failed
+
+StackTrace:
+java.lang.IndexOutOfBoundsException: Index: 1, Size: 1
+	at java.util.ArrayList.rangeCheck(ArrayList.java:659)
+	at java.util.ArrayList.get(ArrayList.java:435)
+	at org.example.stepsDefinition.S07_FollowUs.SocialMediaVisit(S07_FollowUs.java:33)
+	at ✽.user heads to "https://demo.nopcommerce.com/new-online-store-is-open" page(file:///E:/Udacity/nopECommerce/src/main/resources/features/F07_FollowUs.feature:17)
+]]></failure>
+</testcase>
+<testcase classname="User navigate to website's social pages" name="user visits youtube channel" time="32.177">
+<system-out><![CDATA[Given The user should be logged in successfully.............................passed
+Given user clicks on youtube link...........................................passed
+Then user heads to "https://www.youtube.com/user/nopCommerce" page..........passed
+]]></system-out>
+</testcase>
+<testcase classname="Choose item in home slider" name="User can select first product from Home sliders" time="44.119">
+<failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;(//a[@href=&quot;http://demo.nopcommerce.com/&quot;])[1]&quot;}&#10;  (Session info: chrome=108.0.5359.125)&#10;For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element&#10;Build info: version: '4.1.4', revision: '535d840ee2'&#10;System info: host: 'DESKTOP-74OMLHH', ip: '172.16.1.150', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_341'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [2d73bd2a4e1912b0f0c40761ab6741ba, findElement {using=xpath, value=(//a[@href=&quot;http://demo.nopcommerce.com/&quot;])[1]}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: C:\Users\mylap\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:60144}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60144/devtoo..., se:cdpVersion: 108.0.5359.125, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 2d73bd2a4e1912b0f0c40761ab6741ba" type="org.openqa.selenium.NoSuchElementException"><![CDATA[Given The user should be logged in successfully.............................passed
+Given user select the first slider on homepage..............................failed
+Then user head to first product's page......................................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"(//a[@href="http://demo.nopcommerce.com/"])[1]"}
+  (Session info: chrome=108.0.5359.125)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.1.4', revision: '535d840ee2'
+System info: host: 'DESKTOP-74OMLHH', ip: '172.16.1.150', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_341'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [2d73bd2a4e1912b0f0c40761ab6741ba, findElement {using=xpath, value=(//a[@href="http://demo.nopcommerce.com/"])[1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: C:\Users\mylap\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:60144}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60144/devtoo..., se:cdpVersion: 108.0.5359.125, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 2d73bd2a4e1912b0f0c40761ab6741ba
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:385)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:377)
+	at org.example.stepsDefinition.S08_HomeSliders.selectFirstSlider(S08_HomeSliders.java:16)
+	at ✽.user select the first slider on homepage(file:///E:/Udacity/nopECommerce/src/main/resources/features/F08_Slider.feature:7)
+]]></failure>
+</testcase>
+<testcase classname="Choose item in home slider" name="User can select second product from Home sliders" time="29.224">
+<failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;(//a[@href=&quot;http://demo.nopcommerce.com/&quot;])[2]&quot;}&#10;  (Session info: chrome=108.0.5359.125)&#10;For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element&#10;Build info: version: '4.1.4', revision: '535d840ee2'&#10;System info: host: 'DESKTOP-74OMLHH', ip: '172.16.1.150', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_341'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [11fe1c0a5d2fd7bee3054dcb2b517c76, findElement {using=xpath, value=(//a[@href=&quot;http://demo.nopcommerce.com/&quot;])[2]}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: C:\Users\mylap\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:60205}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60205/devtoo..., se:cdpVersion: 108.0.5359.125, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 11fe1c0a5d2fd7bee3054dcb2b517c76" type="org.openqa.selenium.NoSuchElementException"><![CDATA[Given The user should be logged in successfully.............................passed
+Given user select the second slider on homepage.............................failed
+Then user head to second product's page.....................................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"(//a[@href="http://demo.nopcommerce.com/"])[2]"}
+  (Session info: chrome=108.0.5359.125)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.1.4', revision: '535d840ee2'
+System info: host: 'DESKTOP-74OMLHH', ip: '172.16.1.150', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_341'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [11fe1c0a5d2fd7bee3054dcb2b517c76, findElement {using=xpath, value=(//a[@href="http://demo.nopcommerce.com/"])[2]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: C:\Users\mylap\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:60205}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60205/devtoo..., se:cdpVersion: 108.0.5359.125, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 11fe1c0a5d2fd7bee3054dcb2b517c76
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:385)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:377)
+	at org.example.stepsDefinition.S08_HomeSliders.selectSecondSlider(S08_HomeSliders.java:26)
+	at ✽.user select the second slider on homepage(file:///E:/Udacity/nopECommerce/src/main/resources/features/F08_Slider.feature:11)
+]]></failure>
+</testcase>
+<testcase classname="Add products to wishlist" name="Success message appears when adding product to wishlist" time="17.097">
+<system-out><![CDATA[Given The user should be logged in successfully.............................passed
+Given user navigates to needed product then click add to wishlist button....passed
+Then A green success message should appear..................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Add products to wishlist" name="Number of wishlist items increase" time="12.868">
+<failure message="expected [true] but found [false]" type="java.lang.AssertionError"><![CDATA[Given The user should be logged in successfully.............................passed
+Given user navigates to needed product then click add to wishlist button....passed
+Then number of wishlist products on homepage get increased..................passed
+And number of wishlist products equals to number of real wishlist actions...failed
+
+StackTrace:
+java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1413)
+	at org.testng.Assert.assertTrue(Assert.java:56)
+	at org.testng.Assert.assertTrue(Assert.java:66)
+	at org.example.stepsDefinition.S09_Wishlist.wishlistNum(S09_Wishlist.java:32)
+	at ✽.number of wishlist products equals to number of real wishlist actions(file:///E:/Udacity/nopECommerce/src/main/resources/features/F09_Wishlist.feature:14)
+]]></failure>
+</testcase>
+</testsuite>
